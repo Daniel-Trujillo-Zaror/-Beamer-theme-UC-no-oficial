@@ -1,0 +1,195 @@
+\documentclass{beamer}
+\usetheme{UCnooficial}
+
+% ============================================
+% PAQUETES BÁSICOS
+% ============================================
+\usepackage{ragged2e}
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{.}} % <-- busca imágenes en la carpeta actual (Overleaf y local)
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usefonttheme{professionalfonts}
+\usefonttheme{structurebold}
+
+% ============================================
+% DATOS DEL DOCUMENTO
+% ============================================
+\title{Título de la Presentación}
+\subtitle{Subtítulo o Curso}
+\author{Nombre del Autor}
+\institute{Pontificia Universidad Católica de Chile \\ (Plantilla no oficial)}
+\date{\today}
+
+\begin{document}
+
+% ============================================
+% SLIDE DE PORTADA
+% ============================================
+\begin{frame}[plain]
+  \setbeamercolor{background canvas}{bg=azulUC}
+  \centering
+  \vspace{2.5cm}
+  \includegraphics[height=0.4\paperheight]{logo_centrado.png}\\[1cm]
+  {\Huge\bfseries\textcolor{white}{\inserttitle}\par}
+  \vspace{0.3cm}
+  {\Large\textcolor{white}{\insertsubtitle}\par}
+  \vfill
+  {\large\textcolor{white}{\insertauthor}\par}
+  {\small\textcolor{white}{\insertinstitute}\par}
+  \vspace{0.4cm}
+  {\small\textcolor{white}{\insertdate}\par}
+\end{frame}
+
+% ============================================
+% SLIDE DE TÍTULO INSTITUCIONAL
+% ============================================
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture, overlay]
+  % Marco y franjas
+  \draw[line width=12pt, color=azulUC]
+    ([xshift=0.3pt,yshift=0.3pt]current page.south west)
+    rectangle ([xshift=-0.3pt,yshift=-0.3pt]current page.north east);
+  \fill[azulUC] 
+    (current page.south west) rectangle
+    ([xshift=0.78\paperwidth,yshift=0.35cm]current page.south west);
+  \fill[amarilloUC] 
+    ([xshift=0.78\paperwidth]current page.south west) rectangle
+    ([xshift=0.93\paperwidth,yshift=0.35cm]current page.south west);
+  \fill[azulUC]
+    ([xshift=0.93\paperwidth]current page.south west) rectangle
+    ([xshift=\paperwidth,yshift=0.35cm]current page.south west);
+  % Logo y texto
+  \node[anchor=north west, xshift=0.9cm, yshift=-0.9cm] at (current page.north west)
+    {\includegraphics[width=0.7\paperwidth]{logo_lateral.png}};
+  \node[anchor=north, align=center, text width=0.95\paperwidth, yshift=-3.8cm, color=azulUC] at (current page.north) {
+    {\usebeamerfont{title}\bfseries\normalsize
+      \begin{minipage}{0.9\paperwidth}\centering
+        {\large Título de la presentación en una o dos líneas como ejemplo}\\[1cm]
+        {\normalsize \textbf{Nombre del Autor}}\\[0.15cm]
+        {\footnotesize Pontificia Universidad Católica de Chile \\ Plantilla no oficial}
+      \end{minipage}
+    }
+  };
+\end{tikzpicture}
+\end{frame}
+
+\setbeamercolor{background canvas}{bg=white}
+
+% ============================================
+% SLIDE DE PÁRRAFO Y PUNTEO
+% ============================================
+\begin{frame}{Slide de ejemplo — Párrafo y punteo de ideas}
+  \justifying
+  \small
+  \hyphenpenalty=10000
+  \exhyphenpenalty=10000
+  \sloppy
+
+  Breve texto de introducción que da contexto al contenido de la diapositiva.
+
+  \vspace{0.5cm}
+  \begin{itemize}
+    \item Idea 1
+    \item Idea 2
+    \item Idea 3
+  \end{itemize}
+\end{frame}
+
+% ============================================
+% SLIDE CON GRÁFICO
+% ============================================
+\begin{frame}{Título — Gráfico 1}
+  \scriptsize
+  \justifying
+  \begin{center}
+    \includegraphics[width=0.85\linewidth, height=0.65\textheight, keepaspectratio]{G1.png}
+  \end{center}
+  {\color{azulUC}\textbf{Gráfico 1.}} Ejemplo de diapositiva con gráfico y texto breve explicativo.
+\end{frame}
+
+% ============================================
+% SLIDE COMPARATIVA DE GRÁFICOS
+% ============================================
+\begin{frame}{Título — Gráficos Comparativos}
+  \scriptsize
+  \justifying
+  \begin{center}
+    \begin{minipage}[t]{0.48\linewidth}
+      \centering
+      \includegraphics[width=\linewidth, height=0.55\textheight, keepaspectratio]{G1.png}\\[0.2cm]
+      {\color{azulUC}\textbf{Gráfico 2A.}} Ejemplo izquierdo.
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+      \centering
+      \includegraphics[width=\linewidth, height=0.55\textheight, keepaspectratio]{G2.png}\\[0.2cm]
+      {\color{azulUC}\textbf{Gráfico 2B.}} Ejemplo derecho.
+    \end{minipage}
+  \end{center}
+  \vspace{0.3cm}
+  {\color{azulUC}\textbf{Gráfico 2.}} Comparación visual de dos gráficos paralelos.
+\end{frame}
+
+% ============================================
+% SLIDE CON CITA DESTACADA
+% ============================================
+\begin{frame}[plain]
+  \Large
+  \vspace{2cm}
+  \begin{center}
+    \textcolor{azulUC}{\textbf{“Una buena presentación no solo comunica datos, sino también significado.”}}\\[0.5cm]
+    \normalsize \textit{— Ejemplo de cita o mensaje institucional.}
+  \end{center}
+\end{frame}
+
+% ============================================
+% SLIDE CON TABLA
+% ============================================
+\begin{frame}{Resumen de resultados}
+  \small
+  \centering
+  \vspace{0.4cm}
+  \begin{table}[h!]
+    \renewcommand{\arraystretch}{1.4}
+    \setlength{\tabcolsep}{18pt}
+    \begin{tabular}{lccc}
+      \textbf{Categoría} & \textbf{2016} & \textbf{2021} & \textbf{Variación} \\
+      \hline
+      Ejemplo A & 45 & 52 & +7 \\
+      Ejemplo B & 30 & 28 & -2 \\
+      Ejemplo C & 60 & 63 & +3 \\
+    \end{tabular}
+  \end{table}
+  \vspace{0.5cm}
+  {\color{azulUC}\textbf{Tabla 1.}} Ejemplo de formato tabular.
+\end{frame}
+
+% ============================================
+% SLIDE FINAL
+% ============================================
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width=12pt, color=azulUC]
+    ([xshift=0.3pt,yshift=0.3pt]current page.south west)
+    rectangle ([xshift=-0.3pt,yshift=-0.3pt]current page.north east);
+  \fill[azulUC] 
+    (current page.south west) rectangle
+    ([xshift=0.78\paperwidth,yshift=0.35cm]current page.south west);
+  \fill[amarilloUC] 
+    ([xshift=0.78\paperwidth]current page.south west) rectangle
+    ([xshift=0.93\paperwidth,yshift=0.35cm]current page.south west);
+  \fill[azulUC]
+    ([xshift=0.93\paperwidth]current page.south west) rectangle
+    ([xshift=\paperwidth,yshift=0.35cm]current page.south west);
+  \node[anchor=north west, xshift=0.8cm, yshift=-0.8cm] at (current page.north west)
+    {\includegraphics[width=0.75\paperwidth]{logo_lateral.png}};
+  \node[anchor=center, align=center, text width=0.8\paperwidth,
+        xshift=0cm, yshift=-1cm, color=azulUC] at (current page.center) {
+    {\usebeamerfont{title}\bfseries\LARGE ¡GRACIAS POR SU ATENCIÓN!}
+  };
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

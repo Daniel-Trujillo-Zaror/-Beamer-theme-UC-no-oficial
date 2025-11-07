@@ -1,0 +1,45 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeUCnooficial}[2025/11/06 v1.1 Tema Beamer UC no oficial]
+
+\definecolor{azulUC}{HTML}{0176DE}
+\definecolor{amarilloUC}{HTML}{FEC60D}
+\definecolor{negroUC}{HTML}{000000}
+\definecolor{grisUC}{HTML}{EAEAEA}
+\definecolor{blancoUC}{HTML}{FFFFFF}
+
+\usepackage[sfdefault]{carlito}
+\renewcommand{\familydefault}{\sfdefault}
+
+\setbeamercolor{normal text}{fg=negroUC,bg=blancoUC}
+\setbeamercolor{structure}{fg=azulUC}
+\setbeamercolor{frametitle}{fg=blancoUC,bg=azulUC}
+\setbeamercolor{title}{fg=blancoUC,bg=azulUC}
+\setbeamercolor{itemize item}{fg=azulUC}
+\setbeamercolor{block title}{fg=blancoUC,bg=azulUC}
+\setbeamercolor{block body}{fg=negroUC,bg=grisUC}
+
+\setbeamertemplate{frametitle}{
+  \vspace{-0.1cm}
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1.05cm,dp=0ex]{frametitle}
+    \hspace{-0.1cm}\color{white}\rule{0.05cm}{1.05cm}%
+    \hspace{-0.05cm}\color{amarilloUC}\rule{0.75cm}{1.05cm}%
+    \color{azulUC}\rule{0.9\paperwidth}{1.05cm}%
+    \hspace{-0.9\paperwidth}
+    \raisebox{0.28cm}{\color{white}\Large\insertframetitle}
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{
+  \vspace{-0.15cm}
+  \begin{center}
+    \color{grisUC}\rule{0.9\paperwidth}{0.125cm}
+  \end{center}
+  \vspace{0.1cm}
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\AtBeginEnvironment{frame}{\justifying}
